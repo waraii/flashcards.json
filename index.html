@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Flashcard Antikorupsi Interaktif</title>
+    <style>
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; background: #f4f4f4; }
+        .card { width: 350px; height: 200px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+                display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; 
+                cursor: pointer; margin-top: 50px; transition: 0.3s; font-size: 1.2rem; }
+        .card:hover { transform: scale(1.05); }
+        .controls { margin-top: 20px; }
+        button { padding: 10px 20px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 5px; }
+        #category { font-weight: bold; color: #d9534f; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Belajar Antikorupsi</h1>
+    <div id="category"></div>
+    <div class="card" id="flashcard" onclick="flipCard()">Klik untuk melihat pertanyaan</div>
+    <div class="controls">
+        <button onclick="prevCard()">Kembali</button>
+        <button onclick="nextCard()">Lanjut</button>
+    </div>
+
+    <script>
+        const data = [
+            {q: "Gunakan mobil dinas untuk liburan keluarga?", a: "Merugikan Keuangan Negara", cat: "Tipikor"},
+            {q: "Uang damai agar tidak ditilang?", a: "Suap-Menyuap", cat: "Tipikor"},
+            {q: "Rekayasa kuitansi kosong kantor?", a: "Penggelapan dalam Jabatan", cat: "Tipikor"},
+            {q: "Petugas paksa warga bayar tarif ilegal?", a: "Pemerasan", cat: "Tipikor"},
+            {q: "Pemborong kurangi kualitas material?", a: "Perbuatan Curang", cat: "Tipikor"},
+            {q: "Pejabat ikut tender perusahaan sendiri?", a: "Benturan Kepentingan", cat: "Tipikor"},
+            {q: "Terima tiket pesawat dari rekanan bisnis?", a: "Gratifikasi", cat: "Tipikor"},
+            {q: "Rumus CDMA Robert Klitgaard?", a: "Corruption = Directionary + Monopoly – Accountability", cat: "Teori"},
+            {q: "3 Faktor Fraud Triangle?", a: "Peluang, Dorongan, Rasionalisasi", cat: "Teori"},
+            {q: "Tipikor vs Perilaku Koruptif?", a: "Tipikor = Hukum Pidana, Koruptif = Kebiasaan Tercela", cat: "Wawasan"}
+        ];
+
+        let index = 0;
+        let isQuestion = true;
+
+        function updateCard() {
+            const card = document.getElementById('flashcard');
+            const category = document.getElementById('category');
+            category.innerText = `Kategori: ${data[index].cat}`;
+            card.innerText = isQuestion ? data[index].q : data[index].a;
+            card.style.background = isQuestion ? "white" : "#e9f7ef";
+        }
+
+        function flipCard() { isQuestion = !isQuestion; updateCard(); }
+        function nextCard() { index = (index + 1) % data.length; isQuestion = true; updateCard(); }
+        function prevCard() { index = (index - 1 + data.length) % data.length; isQuestion = true; updateCard(); }
+        
+        updateCard();
+    </script>
+</body>
+</html>
