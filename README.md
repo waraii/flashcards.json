@@ -33,3 +33,27 @@ Data utama tersedia dalam format `flashcards.json`. Pengembang dapat menggunakan
 
 ## 🤝 Partisipasi Masyarakat
 Proyek ini merupakan bentuk kontribusi riil saya sebagai masyarakat sesuai kapasitas yang saya miliki dalam upaya memberantas korupsi [24, 25].
+
+# 🛡️ Repositori Edukasi Antikorupsi
+
+Proyek ini bertujuan menciptakan **kesamaan pemahaman** mengenai korupsi guna membangun budaya integritas sejak dini [2, 3].
+
+## 📖 Materi Pembelajaran
+1. **7 Kelompok Utama Tipikor:** Dirangkum dari 30 jenis korupsi sesuai UU No. 31/1999 jo. UU No. 20/2001 [4, 5]:
+   - Merugikan Keuangan Negara
+   - Suap-Menyuap
+   - Penggelapan dalam Jabatan
+   - Pemerasan
+   - Perbuatan Curang
+   - Benturan Kepentingan dalam Pengadaan
+   - Gratifikasi
+2. **Teori Penyebab:** 
+   - **CDMA:** Korupsi terjadi akibat kekuasaan dan monopoli tanpa akuntabilitas [6].
+   - **Fraud Triangle:** Dipicu oleh Peluang, Dorongan, dan Pembenaran [7].
+3. **9 Nilai Integritas:** Jujur, Tanggung Jawab, Disiplin, Mandiri, Kerja Keras, Sederhana, Berani, Peduli, dan Adil [8, 9].
+
+## 🎮 Cara Menjalankan Flashcard
+- Buka file `index.html` di browser Anda untuk mulai kuis interaktif.
+- Data mentah tersedia di `flashcards.json`.
+
+*Mari berlatih integritas karena korupsi sengsarakan rakyat!* [10, 11].
