@@ -1,0 +1,50 @@
+{
+  "flashcards_tipikor": [
+    {
+      "id": 1,
+      "pertanyaan": "Menggunakan fasilitas negara seperti mobil dinas untuk keperluan pribadi keluarga.",
+      "jawaban": "Merugikan Keuangan Negara",
+      "referensi_uu": "Pasal 2 dan 3 UU No. 31/1999 jo. UU No. 20/2001"
+    },
+    {
+      "id": 2,
+      "pertanyaan": "Memberikan uang kepada oknum polisi agar tidak ditilang saat razia.",
+      "jawaban": "Suap-Menyuap",
+      "referensi_uu": "Pasal 5, 6, 11, 12, dan 13 UU No. 31/1999 jo. UU No. 20/2001"
+    },
+    {
+      "id": 3,
+      "pertanyaan": "Menggunakan kuitansi kosong untuk merekayasa angka pengeluaran kantor.",
+      "jawaban": "Penggelapan dalam Jabatan",
+      "referensi_uu": "Pasal 8, 9, dan 10 UU No. 31/1999 jo. UU No. 20/2001"
+    },
+    {
+      "id": 4,
+      "pertanyaan": "Petugas layanan publik menaikkan tarif pengurusan dokumen di luar ketentuan resmi.",
+      "jawaban": "Pemerasan",
+      "referensi_uu": "Pasal 12 huruf e, g, h UU No. 31/1999 jo. UU No. 20/2001"
+    },
+    {
+      "id": 5,
+      "pertanyaan": "Pemborong menggunakan bahan material yang kualitasnya di bawah spesifikasi kontrak.",
+      "jawaban": "Perbuatan Curang",
+      "referensi_uu": "Pasal 7 dan 12 huruf h UU No. 31/1999 jo. UU No. 20/2001"
+    },
+    {
+      "id": 6,
+      "pertanyaan": "Pejabat pengadaan sengaja melibatkan perusahaan miliknya dalam tender proyek.",
+      "jawaban": "Benturan Kepentingan dalam Pengadaan",
+      "referensi_uu": "Pasal 12 huruf i UU No. 31/1999 jo. UU No. 20/2001"
+    },
+    {
+      "id": 7,
+      "pertanyaan": "Menerima parsel mewah atau tiket perjalanan dari rekanan bisnis karena jabatan.",
+      "jawaban": "Gratifikasi",
+      "referensi_uu": "Pasal 12B dan 12C UU No. 31/1999 jo. UU No. 20/2001"
+    }
+  ],
+  "nilai_integritas": [
+    "Jujur", "Tanggung Jawab", "Disiplin", "Mandiri", 
+    "Kerja Keras", "Sederhana", "Berani", "Peduli", "Adil"
+  ]
+}
