@@ -1,50 +1,85 @@
 {
-  "flashcards_tipikor": [
+  "flashcards_antikorupsi": [
     {
       "id": 1,
+      "kategori": "Tipikor",
       "pertanyaan": "Menggunakan fasilitas negara seperti mobil dinas untuk keperluan pribadi keluarga.",
       "jawaban": "Merugikan Keuangan Negara",
-      "referensi_uu": "Pasal 2 dan 3 UU No. 31/1999 jo. UU No. 20/2001"
+      "referensi": "Pasal 2 dan 3 UU No. 31/1999 jo. UU No. 20/2001 [4]"
     },
     {
       "id": 2,
+      "kategori": "Tipikor",
       "pertanyaan": "Memberikan uang kepada oknum polisi agar tidak ditilang saat razia.",
       "jawaban": "Suap-Menyuap",
-      "referensi_uu": "Pasal 5, 6, 11, 12, dan 13 UU No. 31/1999 jo. UU No. 20/2001"
+      "referensi": "Pasal 5, 6, 11, 12, dan 13 UU No. 31/1999 jo. UU No. 20/2001 [5]"
     },
     {
       "id": 3,
+      "kategori": "Tipikor",
       "pertanyaan": "Menggunakan kuitansi kosong untuk merekayasa angka pengeluaran kantor.",
       "jawaban": "Penggelapan dalam Jabatan",
-      "referensi_uu": "Pasal 8, 9, dan 10 UU No. 31/1999 jo. UU No. 20/2001"
+      "referensi": "Pasal 8, 9, dan 10 UU No. 31/1999 jo. UU No. 20/2001 [6, 7]"
     },
     {
       "id": 4,
+      "kategori": "Tipikor",
       "pertanyaan": "Petugas layanan publik menaikkan tarif pengurusan dokumen di luar ketentuan resmi.",
       "jawaban": "Pemerasan",
-      "referensi_uu": "Pasal 12 huruf e, g, h UU No. 31/1999 jo. UU No. 20/2001"
+      "referensi": "Pasal 12 huruf e, g, h UU No. 31/1999 jo. UU No. 20/2001 [8, 9]"
     },
     {
       "id": 5,
+      "kategori": "Tipikor",
       "pertanyaan": "Pemborong menggunakan bahan material yang kualitasnya di bawah spesifikasi kontrak.",
       "jawaban": "Perbuatan Curang",
-      "referensi_uu": "Pasal 7 dan 12 huruf h UU No. 31/1999 jo. UU No. 20/2001"
+      "referensi": "Pasal 7 dan 12 huruf h UU No. 31/1999 jo. UU No. 20/2001 [9, 10]"
     },
     {
       "id": 6,
+      "kategori": "Tipikor",
       "pertanyaan": "Pejabat pengadaan sengaja melibatkan perusahaan miliknya dalam tender proyek.",
       "jawaban": "Benturan Kepentingan dalam Pengadaan",
-      "referensi_uu": "Pasal 12 huruf i UU No. 31/1999 jo. UU No. 20/2001"
+      "referensi": "Pasal 12 huruf i UU No. 31/1999 jo. UU No. 20/2001 [10, 11]"
     },
     {
       "id": 7,
+      "kategori": "Tipikor",
       "pertanyaan": "Menerima parsel mewah atau tiket perjalanan dari rekanan bisnis karena jabatan.",
       "jawaban": "Gratifikasi",
-      "referensi_uu": "Pasal 12B dan 12C UU No. 31/1999 jo. UU No. 20/2001"
+      "referensi": "Pasal 12B dan 12C UU No. 31/1999 jo. UU No. 20/2001 [12, 13]"
+    },
+    {
+      "id": 8,
+      "kategori": "Teori",
+      "pertanyaan": "Apa rumus teori korupsi menurut Robert Klitgaard (CDMA Theory)?",
+      "jawaban": "Corruption = Directionary + Monopoly – Accountability (Korupsi terjadi karena adanya kekuasaan dan monopoli tanpa akuntabilitas).",
+      "referensi": "Buku Kapita Selekta Bab 1 [14]"
+    },
+    {
+      "id": 9,
+      "kategori": "Teori",
+      "pertanyaan": "Sebutkan 3 faktor utama pendorong kecurangan dalam Fraud Triangle Theory!",
+      "jawaban": "1. Peluang (Opportunity), 2. Dorongan/Tekanan (Pressure), 3. Pembenaran (Rationalization).",
+      "referensi": "Buku Kapita Selekta Bab 1 [15, 16]"
+    },
+    {
+      "id": 10,
+      "kategori": "Wawasan",
+      "pertanyaan": "Apa perbedaan mendasar antara Tindak Pidana Korupsi dan Perilaku Koruptif?",
+      "jawaban": "Tipikor adalah pelanggaran hukum pidana (UU), sedangkan Perilaku Koruptif adalah tindakan tercela sehari-hari (seperti menyontek atau bohong) yang menjadi akar kebiasaan korupsi namun belum memiliki dampak hukum pidana.",
+      "referensi": "Buku Kapita Selekta Bab 3 [13, 17]"
     }
   ],
-  "nilai_integritas": [
-    "Jujur", "Tanggung Jawab", "Disiplin", "Mandiri", 
-    "Kerja Keras", "Sederhana", "Berani", "Peduli", "Adil"
+  "nilai_integritas_pencegahan": [
+    "Jujur (Tidak menyontek/bohong)",
+    "Tanggung Jawab (Melaksanakan tugas sungguh-sungguh)",
+    "Disiplin (Taat aturan dan waktu)",
+    "Mandiri (Tidak bergantung pada orang lain)",
+    "Kerja Keras (Menghindari jalan pintas)",
+    "Sederhana (Hidup sesuai kebutuhan)",
+    "Berani (Menolak suap dan melapor)",
+    "Peduli (Memperhatikan lingkungan)",
+    "Adil (Memberikan hak yang seharusnya)"
   ]
 }
