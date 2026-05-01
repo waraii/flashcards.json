@@ -6,35 +6,48 @@
     <title>Quiz Integritas - Point Sipil</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; flex-direction: column; align-items: center; background: #f0f2f5; padding: 20px; }
-        .quiz-container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 500px; text-align: center; }
-        .question { font-size: 1.4rem; font-weight: bold; margin-bottom: 20px; color: #333; }
+        .quiz-container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 500px; text-align: center; position: relative; }
+        h1 { color: #333; font-size: 1.5rem; margin-bottom: 20px; }
+        .question { font-size: 1.2rem; font-weight: bold; margin-bottom: 20px; color: #444; min-height: 60px; }
         .options { display: grid; gap: 10px; margin-bottom: 20px; }
-        button.option { padding: 12px; border: 2px solid #007bff; border-radius: 8px; background: white; cursor: pointer; transition: 0.3s; font-size: 1rem; }
-        button.option:hover { background: #e7f1ff; }
-        .score-board { margin-top: 20px; font-size: 1.1rem; font-weight: bold; color: #28a745; }
-        .feedback { margin-top: 10px; font-weight: bold; min-height: 24px; }
-        .next-btn { margin-top: 15px; padding: 10px 25px; background: #333; color: white; border: none; border-radius: 5px; cursor: pointer; display: none; }
+        button.option { padding: 12px; border: 2px solid #007bff; border-radius: 8px; background: white; cursor: pointer; transition: 0.3s; font-size: 1rem; font-weight: 500; }
+        button.option:hover:not([disabled]) { background: #e7f1ff; transform: translateY(-2px); }
+        button.option:disabled { border-color: #ccc; cursor: not-allowed; }
+        .feedback { margin-top: 10px; font-weight: bold; min-height: 24px; font-size: 1.1rem; }
+        .next-btn { margin-top: 15px; padding: 12px 30px; background: #333; color: white; border: none; border-radius: 5px; cursor: pointer; display: none; font-size: 1rem; }
+        
+        /* Gaya Skor Akhir */
+        #result-screen { display: none; }
+        .final-score { font-size: 4rem; font-weight: bold; color: #007bff; margin: 20px 0; }
+        .message { font-size: 1.2rem; color: #555; margin-bottom: 20px; }
     </style>
 </head>
 <body>
     <div class="quiz-container">
-        <h1>🎮 Game Integritas</h1>
-        <div id="quiz-box">
+        <div id="quiz-screen">
+            <h1>🎮 Game Integritas</h1>
             <div class="question" id="question-text">Memuat pertanyaan...</div>
             <div class="options" id="options-container"></div>
             <div class="feedback" id="feedback-text"></div>
-            <button class="next-btn" id="next-button" onclick="loadQuestion()">Pertanyaan Selanjutnya</button>
+            <button class="next-btn" id="next-button" onclick="handleNext()">Pertanyaan Selanjutnya</button>
         </div>
-        <div class="score-board">Skor: <span id="score">0</span></div>
+
+        <div id="result-screen">
+            <h1>🏁 Hasil Akhir</h1>
+            <div class="message">Skor Anda Adalah:</div>
+            <div class="final-score" id="final-score-val">0</div>
+            <div class="message" id="final-message"></div>
+            <button class="next-btn" style="display:inline-block;" onclick="location.reload()">Main Lagi</button>
+        </div>
     </div>
 
     <script>
         const quizData = [
-            { q: "Apa rumus korupsi menurut Robert Klitgaard?", a: "C = D + M - A", options: ["C = D + M - A", "C = P + D + R", "C = K + J + A", "C = M + A - D"], cat: "Teori" },
-            { q: "Mana yang termasuk 3 faktor Fraud Triangle?", a: "Peluang, Dorongan, Rasionalisasi", options: ["Uang, Kuasa, Niat", "Peluang, Dorongan, Rasionalisasi", "Niat, Kesempatan, Jabatan", "Keserakahan, Kebutuhan, Pengungkapan"], cat: "Teori" },
-            { q: "Memberikan tiket pesawat kepada pejabat termasuk?", a: "Gratifikasi", options: ["Pemerasan", "Suap", "Gratifikasi", "Benturan Kepentingan"], cat: "Tipikor" },
-            { q: "Menggunakan mobil dinas untuk mudik lebaran adalah?", a: "Merugikan Keuangan Negara", options: ["Gratifikasi", "Pemerasan", "Merugikan Keuangan Negara", "Perbuatan Curang"], cat: "Tipikor" },
-            { q: "Nilai integritas 'Berani' artinya?", a: "Berani menolak ajakan korupsi", options: ["Berani melawan hukum", "Berani menolak ajakan korupsi", "Berani mengambil uang kantor", "Berani menyontek"], cat: "Nilai" }
+            { q: "Apa rumus korupsi menurut Robert Klitgaard?", a: "C = D + M - A", options: ["C = D + M - A", "C = P + D + R", "C = K + J + A", "C = M + A - D"] },
+            { q: "Mana yang termasuk 3 faktor Fraud Triangle?", a: "Peluang, Dorongan, Rasionalisasi", options: ["Uang, Kuasa, Niat", "Peluang, Dorongan, Rasionalisasi", "Niat, Kesempatan, Jabatan", "Keserakahan, Kebutuhan, Pengungkapan"] },
+            { q: "Memberikan tiket pesawat kepada pejabat termasuk?", a: "Gratifikasi", options: ["Pemerasan", "Suap", "Gratifikasi", "Benturan Kepentingan"] },
+            { q: "Menggunakan mobil dinas untuk mudik lebaran adalah?", a: "Merugikan Keuangan Negara", options: ["Gratifikasi", "Pemerasan", "Merugikan Keuangan Negara", "Perbuatan Curang"] },
+            { q: "Nilai integritas 'Berani' artinya?", a: "Berani menolak ajakan korupsi", options: ["Berani melawan hukum", "Berani menolak ajakan korupsi", "Berani mengambil uang kantor", "Berani menyontek"] }
         ];
 
         let currentQuestion = 0;
@@ -53,39 +66,59 @@
             qText.innerText = current.q;
             optContainer.innerHTML = "";
 
-            current.options.sort(() => Math.random() - 0.5).forEach(opt => {
+            // Acak pilihan jawaban
+            [...current.options].sort(() => Math.random() - 0.5).forEach(opt => {
                 const btn = document.createElement('button');
                 btn.classList.add('option');
                 btn.innerText = opt;
-                btn.onclick = () => checkAnswer(opt, current.a);
+                btn.onclick = () => checkAnswer(btn, opt, current.a);
                 optContainer.appendChild(btn);
             });
         }
 
-        function checkAnswer(selected, correct) {
+        function checkAnswer(selectedBtn, selectedText, correct) {
             const feedback = document.getElementById('feedback-text');
             const nextBtn = document.getElementById('next-button');
             const options = document.querySelectorAll('.option');
 
             options.forEach(btn => btn.disabled = true);
 
-            if (selected === correct) {
+            if (selectedText === correct) {
                 score += 20;
+                selectedBtn.style.background = "#d4edda";
+                selectedBtn.style.borderColor = "#28a745";
                 feedback.innerText = "✅ Benar!";
                 feedback.style.color = "#28a745";
             } else {
+                selectedBtn.style.background = "#f8d7da";
+                selectedBtn.style.borderColor = "#dc3545";
                 feedback.innerText = `❌ Salah! Jawaban: ${correct}`;
                 feedback.style.color = "#dc3545";
             }
 
-            document.getElementById('score').innerText = score;
             nextBtn.style.display = "inline-block";
-            
+        }
+
+        function handleNext() {
             currentQuestion++;
-            if (currentQuestion >= quizData.length) {
-                nextBtn.innerText = "Main Lagi";
-                nextBtn.onclick = () => location.reload();
+            if (currentQuestion < quizData.length) {
+                loadQuestion();
+            } else {
+                showResults();
             }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-screen').style.display = 'none';
+            document.getElementById('result-screen').style.display = 'block';
+            document.getElementById('final-score-val').innerText = score;
+            
+            let msg = "";
+            if(score === 100) msg = "Luar Biasa! Anda Paham Integritas!";
+            else if(score >= 60) msg = "Bagus! Terus Tingkatkan Pemahaman Anda.";
+            else msg = "Ayo Belajar Lagi untuk Persiapan Ujian!";
+            
+            document.getElementById('final-message').innerText = msg;
         }
 
         loadQuestion();
